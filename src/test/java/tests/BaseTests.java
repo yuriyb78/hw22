@@ -10,7 +10,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import сonfig.DriverConfig;
+import config.DriverConfig;
 
 import java.util.Map;
 
@@ -25,9 +25,10 @@ public class BaseTests {
         Configuration.browser = driverConfig.browserName();
         Configuration.browserVersion = driverConfig.browserVersion();
         Configuration.browserSize = driverConfig.browserSize();
-        Configuration.remote = driverConfig.browserUrl();
+//        Configuration.remote = driverConfig.browserUrl();
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
+        Configuration.holdBrowserOpen = true; // Чтобы браузер не закрывался после выполенения теста
 
         SelenideLogger.addListener("allure", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();

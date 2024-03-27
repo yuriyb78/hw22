@@ -1,11 +1,11 @@
-package сonfig;
+package config;
 
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:config/${env}.properties"
+        "classpath:environment/${env}.properties"
 })
 public interface DriverConfig extends Config {
 
