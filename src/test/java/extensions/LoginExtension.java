@@ -1,6 +1,7 @@
 package extensions;
 
 import config.AuthConfig;
+import io.qameta.allure.Step;
 import model.LoginBodyModel;
 import model.LoginResponseModel;
 import org.aeonbits.owner.ConfigFactory;
@@ -16,6 +17,7 @@ import static specs.RequestSpec.successfulResponseSpec;
 
 public class LoginExtension implements BeforeEachCallback {
     @Override
+    @Step("Авторизация на сайте https://demoqa.com через API")
     public void beforeEach (ExtensionContext context) {
 
         AuthConfig authConfig = ConfigFactory.create(AuthConfig.class);

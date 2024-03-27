@@ -25,10 +25,10 @@ public class BaseTests {
         Configuration.browser = driverConfig.browserName();
         Configuration.browserVersion = driverConfig.browserVersion();
         Configuration.browserSize = driverConfig.browserSize();
-//        Configuration.remote = driverConfig.browserUrl();
+        Configuration.remote = driverConfig.browserUrl();
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true; // Чтобы браузер не закрывался после выполенения теста
+//        Configuration.holdBrowserOpen = true; // Чтобы браузер не закрывался после выполенения теста
 
         SelenideLogger.addListener("allure", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -39,7 +39,6 @@ public class BaseTests {
         Configuration.browserCapabilities = capabilities;
 
         RestAssured.baseURI = "https://demoqa.com";
-//        RestAssured.basePath = "/api";
 
     }
 

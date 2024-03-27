@@ -26,14 +26,4 @@ public class RequestSpec {
             .log(BODY)
             .build();
 
-    public static ResponseSpecification failedLoginResponseSpec = new ResponseSpecBuilder()
-            .expectStatusCode(400)
-            .log(STATUS)
-            .log(BODY)
-            .build();
-
-    public static ResponseSpecification errorResponseSpec = new ResponseSpecBuilder()
-            .expectStatusCode(404)
-            .log(STATUS)
-            .build();
 }

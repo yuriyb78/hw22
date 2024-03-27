@@ -1,9 +1,7 @@
 package tests;
 
-import config.AuthConfig;
 import extensions.WithLogin;
-import model.LoginBodyModel;
-import org.aeonbits.owner.ConfigFactory;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 import pages.ProfilePage;
 import pages.component.CheckProfilePage;
@@ -16,13 +14,13 @@ public class CheckProfilePageTest extends BaseTests {
 
     @Test
     @WithLogin
-    void checkProfilePageTest () {
+    @Feature("Проверка страницы профиля пользователя")
+    void checkEmptyTableOnProfilePageTest () {
 
-        AuthConfig authConfig = ConfigFactory.create(AuthConfig.class);
         profilePage.openProfilePage();
-        checkProfilePage.checkUserNameAfterAuthorisation(authConfig.userName());
-
-
+        checkProfilePage.checkUserNameAfterAuthorisation()
+                .checkEmptyCellsInList()
+                .checkEmptyTable();
 
     }
 }
